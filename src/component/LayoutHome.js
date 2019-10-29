@@ -1,16 +1,12 @@
 import React from "react";
 
 import { Layout, LayoutPanel } from "rc-easyui";
-import AccordionMenu from "./LeftSide";
 
-// Home
+import AccordionMenu from "./AccordionMenu";
+import "./styles/left-side.css";
+
 import Home from "./Home/Home";
-const left = {
-  width: 260,
-  height: "100%",
-  backgroundColor: "red"
-};
-class LayoutContainer extends React.Component {
+class LayoutHome extends React.Component {
   render() {
     return (
       <div>
@@ -20,17 +16,15 @@ class LayoutContainer extends React.Component {
             title="AWC"
             collapsible
             expander
-            style={left}
+            className="left"
           >
             <AccordionMenu />
           </LayoutPanel>
-          <LayoutPanel region="center" title="Home" style={{ height: "100vh" }}>
-            <Home />
-          </LayoutPanel>
+          <Home />
         </Layout>
       </div>
     );
   }
 }
 
-export default LayoutContainer;
+export default LayoutHome;
